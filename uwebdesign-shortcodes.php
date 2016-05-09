@@ -1,12 +1,12 @@
 <?php
 /**
  * Plugin Name: uWebDesign Shortcodes
- * Plugin URI: https://github.com/websanya/uwebdesign_plugin_shortcodes
+ * Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
  * Description: Плагин с шорткодами для комьюнити сайта uWebDesign.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Alexander Goncharov
  * Author URI: https://websanya.ru
- * Github Plugin URI: https://github.com/websanya/uwebdesign_plugin_shortcodes
+ * Github Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
  * Github Branch: master
  */
 
