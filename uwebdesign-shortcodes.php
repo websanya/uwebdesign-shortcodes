@@ -3,11 +3,11 @@
  * Plugin Name: uWebDesign Shortcodes
  * Plugin URI: https://github.com/websanya/uwebdesign_plugin_shortcodes
  * Description: Плагин с шорткодами для комьюнити сайта uWebDesign.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Alexander Goncharov
  * Author URI: https://websanya.ru
- * Bitbucket Plugin URI: https://github.com/websanya/uwebdesign_plugin_shortcodes
- * Bitbucket Branch: master
+ * Github Plugin URI: https://github.com/websanya/uwebdesign_plugin_shortcodes
+ * Github Branch: master
  */
 
 /**
@@ -111,7 +111,7 @@ Class UwebShortcodes {
 
 	/**
 	 * Callback for 'tweet_this' shortcode.
-	 * 
+	 *
 	 * @param $atts
 	 * @param $content
 	 *
