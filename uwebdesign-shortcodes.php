@@ -3,11 +3,11 @@
  * Plugin Name: uWebDesign Shortcodes
  * Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
  * Description: Плагин с шорткодами для комьюнити сайта uWebDesign.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Alexander Goncharov
  * Author URI: https://websanya.ru
- * Github Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
- * Github Branch: master
+ * GitHub Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
+ * GitHub Branch: master
  */
 
 /**
@@ -42,7 +42,7 @@ Class UwebShortcodes {
 
 		//* Form the arguments for WP_Query.
 		$args = array(
-			'post_type'           => array( 'post', 'weekly', 'video' ),
+			'post_type'           => array( 'post', 'weeklies', 'videos' ),
 			'ignore_sticky_posts' => true,
 			'posts_per_page'      => 2,
 		);
