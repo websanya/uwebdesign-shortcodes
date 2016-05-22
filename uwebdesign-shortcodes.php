@@ -3,7 +3,7 @@
  * Plugin Name: uWebDesign Shortcodes
  * Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
  * Description: Плагин с шорткодами для комьюнити сайта uWebDesign.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Alexander Goncharov
  * Author URI: https://websanya.ru
  * GitHub Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
@@ -25,6 +25,12 @@ Class UwebShortcodes {
 		add_shortcode( 'tweet_this', array( $this, 'tweet_this_display' ) );
 		//* Displays SmartApe link.
 		add_shortcode( 'smartape', array( $this, 'smartape_display' ) );
+		//* Displays Yandex Money link.
+		add_shortcode( 'ya_money', array( $this, 'ya_money_display' ) );
+		//* Displays PayPal link.
+		add_shortcode( 'paypal', array( $this, 'paypal_display' ) );
+		//* Displays both money links.
+		add_shortcode( 'donate', array( $this, 'donate_display' ) );
 	}
 
 	/**
@@ -140,13 +146,94 @@ Class UwebShortcodes {
 	 */
 	public function smartape_display( $atts, $content ) {
 		//* Let's build this bitch too.
-		$output = '<a class="smartape-this" href="https://cp.smartape.ru/mancgi/partnerprogram?partner=2922&project=1"'
+		$output = '<a class="shortcode-this" href="https://cp.smartape.ru/mancgi/partnerprogram?partner=2922&project=1"'
 		          . 'target="_blank">'
 		          . $content
-		          . '<span class="smartape-this-icon dashicons dashicons-arrow-down-alt"></span>'
-		          . '<img class="smartape-this-image" src="'
+		          . '<span class="shortcode-this-icon dashicons dashicons-arrow-down-alt"></span>'
+		          . '<img class="shortcode-this-image" src="'
 		          . plugin_dir_url( __FILE__ )
-		          . '/img/smartape-logo.png" alt="smartape"></a>';
+		          . '/img/smartape-logo.png" alt="Smartape логотип"></a>';
+
+		return $output;
+	}
+
+	/**
+	 * Callback for 'ya_money' shortcode.
+	 *
+	 * @param $atts
+	 * @param $content
+	 *
+	 * @return string
+	 */
+	public function ya_money_display( $atts, $content ) {
+		if ( $content != '' ) {
+			$arrow = '<span class="shortcode-this-icon dashicons dashicons-arrow-down-alt"></span>';
+		} else {
+			$arrow = '';
+		}
+
+		//* Let's get some sweet money.
+		$output = '<a class="shortcode-this" href="https://money.yandex.ru/to/410012067315013"'
+		          . 'target="_blank">'
+		          . $content
+		          . $arrow
+		          . '<img class="shortcode-this-image" src="'
+		          . plugin_dir_url( __FILE__ )
+		          . '/img/ya-money-logo.gif" alt="Яндекс.Деньги логотип"></a>';
+
+		return $output;
+	}
+
+	/**
+	 * Callback for 'paypal' shortcode.
+	 *
+	 * @param $atts
+	 * @param $content
+	 *
+	 * @return string
+	 */
+	public function paypal_display( $atts, $content ) {
+		if ( $content != '' ) {
+			$arrow = '<span class="shortcode-this-icon dashicons dashicons-arrow-down-alt"></span>';
+		} else {
+			$arrow = '';
+		}
+
+		//* Let's get some sweet money.
+		$output = '<a class="shortcode-this" href="https://www.paypal.me/uwebdesign"'
+		          . 'target="_blank">'
+		          . $content
+		          . $arrow
+		          . '<img class="shortcode-this-image" src="'
+		          . plugin_dir_url( __FILE__ )
+		          . '/img/paypal-logo.png" alt="PayPal логотип"></a>';
+
+		return $output;
+	}
+
+	/**
+	 * Callback for 'donate' shortcode.
+	 *
+	 * @param $atts
+	 * @param $content
+	 *
+	 * @return string
+	 */
+	public function donate_display( $atts, $content ) {
+
+		//* Let's get some sweet money.
+		$output = '<div class="shortcode-this">'
+		          . $content
+		          . '<span class="shortcode-this-icon dashicons dashicons-arrow-down-alt"></span>'
+		          . '<a href="https://money.yandex.ru/to/410012067315013" target="_blank">'
+		          . '<img class="shortcode-this-image shorthcode-this-both" src="'
+		          . plugin_dir_url( __FILE__ )
+		          . '/img/ya-money-logo.gif" alt="PayPal логотип"></a>'
+		          . '&nbsp;&nbsp;&nbsp;&nbsp;'
+		          . '<a href="https://www.paypal.me/uwebdesign" target="_blank">'
+		          . '<img class="shortcode-this-image shorthcode-this-both" src="'
+		          . plugin_dir_url( __FILE__ )
+		          . '/img/paypal-logo.png" alt="PayPal логотип"></a></div>';
 
 		return $output;
 	}
