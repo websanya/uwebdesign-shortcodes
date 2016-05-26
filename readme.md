@@ -12,6 +12,9 @@
 
 ## История изменений
 
+### 1.0.7
+* Removed <img> markup if doesn't have image.
+
 ### 1.0.6
 * Added readme.md.
 

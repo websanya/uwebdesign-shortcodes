@@ -3,7 +3,7 @@
  * Plugin Name: uWebDesign Shortcodes
  * Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
  * Description: Плагин с шорткодами для комьюнити сайта uWebDesign.
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: Alexander Goncharov
  * Author URI: https://websanya.ru
  * GitHub Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
@@ -85,10 +85,14 @@ Class UwebShortcodes {
 					$entry_image_alt    = get_post_meta( $entry_image_id, '_wp_attachment_image_alt', true );
 					?>
 					<div class="entry-inner-item">
-						<img class="entry-inner-item-image" width="<?php echo $entry_image_width; ?>"
-						     height="<?php echo $entry_image_height; ?>"
-						     src="<?php echo $entry_image_src; ?>" alt="<?php echo $entry_image_alt; ?>"
-						     title="<?php echo $entry_image_alt; ?>">
+						<?php if ( $entry_image_id ) {
+							?>
+							<img class="entry-inner-item-image" width="<?php echo $entry_image_width; ?>"
+							     height="<?php echo $entry_image_height; ?>"
+							     src="<?php echo $entry_image_src; ?>" alt="<?php echo $entry_image_alt; ?>"
+							     title="<?php echo $entry_image_alt; ?>">
+							<?php
+						} ?>
 						<h2 class="entry-inner-item-title">
 							<?php the_title(); ?>
 						</h2>
@@ -149,7 +153,7 @@ Class UwebShortcodes {
 		$output = '<a class="shortcode-this" href="https://cp.smartape.ru/mancgi/partnerprogram?partner=2922&project=1"'
 		          . 'target="_blank">'
 		          . $content
-		          . '<span class="shortcode-this-icon dashicons dashicons-arrow-down-alt"></span>'
+		          . '<span class="shortcode-this-icon">&darr;</span>'
 		          . '<img class="shortcode-this-image" src="'
 		          . plugin_dir_url( __FILE__ )
 		          . '/img/smartape-logo.png" alt="Smartape логотип"></a>';
@@ -167,7 +171,7 @@ Class UwebShortcodes {
 	 */
 	public function ya_money_display( $atts, $content ) {
 		if ( $content != '' ) {
-			$arrow = '<span class="shortcode-this-icon dashicons dashicons-arrow-down-alt"></span>';
+			$arrow = '<span class="shortcode-this-icon">&darr;</span>';
 		} else {
 			$arrow = '';
 		}
@@ -194,7 +198,7 @@ Class UwebShortcodes {
 	 */
 	public function paypal_display( $atts, $content ) {
 		if ( $content != '' ) {
-			$arrow = '<span class="shortcode-this-icon dashicons dashicons-arrow-down-alt"></span>';
+			$arrow = '<span class="shortcode-this-icon">&darr;</span>';
 		} else {
 			$arrow = '';
 		}
@@ -224,7 +228,7 @@ Class UwebShortcodes {
 		//* Let's get some sweet money.
 		$output = '<div class="shortcode-this">'
 		          . $content
-		          . '<span class="shortcode-this-icon dashicons dashicons-arrow-down-alt"></span>'
+		          . '<span class="shortcode-this-icon">&darr;</span>'
 		          . '<a href="https://money.yandex.ru/to/410012067315013" target="_blank">'
 		          . '<img class="shortcode-this-image shorthcode-this-both" src="'
 		          . plugin_dir_url( __FILE__ )
