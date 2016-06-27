@@ -3,7 +3,7 @@
  * Plugin Name: uWebDesign Shortcodes
  * Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
  * Description: Плагин с шорткодами для комьюнити сайта uWebDesign.
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: Alexander Goncharov
  * Author URI: https://websanya.ru
  * GitHub Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
@@ -129,9 +129,9 @@ Class UwebShortcodes {
 	 */
 	public function tweet_this_display( $atts, $content ) {
 		//* Let's build this bitch.
-		$output = '<a class="tweet-this" rel="nofollow" href="http://twitter.com/home?status=%22'
+		$output = '<a class="tweet-this" rel="nofollow" href="http://twitter.com/intent/tweet?text='
 		          . $content
-		          . '%22 на @uwebdesgn%0A%0A'
+		          . '%22%20на%20@uwebdesgn%0A%0A&url='
 		          . get_permalink() .
 		          '" target="_blank">«'
 		          . $content

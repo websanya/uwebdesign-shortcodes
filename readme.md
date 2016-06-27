@@ -12,6 +12,9 @@
 
 ## История изменений
 
+### 1.0.8
+* New version of Twitter API.
+
 ### 1.0.7
 * Removed <img> markup if doesn't have image.
 
