@@ -3,7 +3,7 @@
  * Plugin Name: uWebDesign Shortcodes
  * Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
  * Description: Плагин с шорткодами для комьюнити сайта uWebDesign.
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: Alexander Goncharov
  * Author URI: https://websanya.ru
  * GitHub Plugin URI: https://github.com/websanya/uwebdesign-shortcodes
@@ -150,7 +150,7 @@ Class UwebShortcodes {
 	 */
 	public function smartape_display( $atts, $content ) {
 		//* Let's build this bitch too.
-		$output = '<a class="shortcode-this" href="https://cp.smartape.ru/mancgi/partnerprogram?partner=2922&project=1"'
+		$output = '<a class="shortcode-this" href="https://www.smartape.ru/?partner=2922"'
 		          . 'target="_blank">'
 		          . $content
 		          . '<span class="shortcode-this-icon">&darr;</span>'
